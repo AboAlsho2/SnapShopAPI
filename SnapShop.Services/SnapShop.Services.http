@@ -1,0 +1,6 @@
+@SnapShop.Services_HostAddress = http://localhost:5122
+
+GET {{SnapShop.Services_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,15 @@
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.csproj.AssemblyReference.cache
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.AssemblyInfoInputs.cache
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.AssemblyInfo.cs
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\bin\Debug\net8.0\SnapShop.Repository.deps.json
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\bin\Debug\net8.0\SnapShop.Repository.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\bin\Debug\net8.0\SnapShop.Repository.pdb
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\bin\Debug\net8.0\SnapShop.Core.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\bin\Debug\net8.0\SnapShop.Core.pdb
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.66F3B86B.Up2Date
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\refint\SnapShop.Repository.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\SnapShop.Repository.pdb
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Repository\obj\Debug\net8.0\ref\SnapShop.Repository.dll

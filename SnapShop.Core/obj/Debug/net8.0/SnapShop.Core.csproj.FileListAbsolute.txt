@@ -1,0 +1,11 @@
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.deps.json
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.pdb
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.AssemblyInfoInputs.cache
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.AssemblyInfo.cs
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.csproj.CoreCompileInputs.cache
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\refint\SnapShop.Core.dll
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.pdb
+C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\ref\SnapShop.Core.dll

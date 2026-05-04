@@ -1,0 +1,128 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|solutionrelative:snapshop.apis\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|solutionrelative:snapshop.apis\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.apis\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|solutionrelative:snapshop.apis\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.apis\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|solutionrelative:snapshop.apis\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{318309D2-A98A-4375-A2E2-C752A54EB332}|SnapShop.Repository\\SnapShop.Repository.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{318309D2-A98A-4375-A2E2-C752A54EB332}|SnapShop.Repository\\SnapShop.Repository.csproj|solutionrelative:snapshop.repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|c:\\users\\laptop\\source\\repos\\snapshop\\snapshop.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E13A523-C84E-4E56-821A-64E20D38CD92}|SnapShop.APIs\\SnapShop.APIs.csproj|solutionrelative:snapshop.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\appsettings.json",
+              "RelativeDocumentMoniker": "SnapShop.APIs\\appsettings.json",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\appsettings.json",
+              "RelativeToolTip": "SnapShop.APIs\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-03T17:39:14.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "SnapShop.APIs\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Properties\\launchSettings.json",
+              "RelativeToolTip": "SnapShop.APIs\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-03T16:58:15.154Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Dockerfile",
+              "RelativeDocumentMoniker": "SnapShop.APIs\\Dockerfile",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Dockerfile",
+              "RelativeToolTip": "SnapShop.APIs\\Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-03T00:38:24.781Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "SnapShop.Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.Repository\\GenericRepository.cs",
+              "RelativeToolTip": "SnapShop.Repository\\GenericRepository.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABgAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T00:22:09.18Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Program.cs",
+              "RelativeDocumentMoniker": "SnapShop.APIs\\Program.cs",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Program.cs",
+              "RelativeToolTip": "SnapShop.APIs\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T00:09:30.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "SnapShop.APIs\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "SnapShop.APIs\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAtwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T00:03:52.846Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
