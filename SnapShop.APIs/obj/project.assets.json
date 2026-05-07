@@ -4647,19 +4647,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LAPTOP\\.nuget\\packages\\": {}
+    "C:\\Users\\markaz 3\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\SnapShop.APIs.csproj",
+      "projectUniqueName": "D:\\WorkArea\\Shawky\\Back\\SnapShopProject\\SnapShopAPI\\SnapShop.APIs\\SnapShop.APIs.csproj",
       "projectName": "SnapShop.APIs",
-      "projectPath": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\SnapShop.APIs.csproj",
-      "packagesPath": "C:\\Users\\LAPTOP\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.APIs\\obj\\",
+      "projectPath": "D:\\WorkArea\\Shawky\\Back\\SnapShopProject\\SnapShopAPI\\SnapShop.APIs\\SnapShop.APIs.csproj",
+      "packagesPath": "C:\\Users\\markaz 3\\.nuget\\packages\\",
+      "outputPath": "D:\\WorkArea\\Shawky\\Back\\SnapShopProject\\SnapShopAPI\\SnapShop.APIs\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\LAPTOP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\markaz 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4667,15 +4672,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.Service\\SnapShop.Service.csproj": {
-              "projectPath": "C:\\Users\\LAPTOP\\source\\repos\\SnapShop\\SnapShop.Service\\SnapShop.Service.csproj"
+            "D:\\WorkArea\\Shawky\\Back\\SnapShopProject\\SnapShopAPI\\SnapShop.Service\\SnapShop.Service.csproj": {
+              "projectPath": "D:\\WorkArea\\Shawky\\Back\\SnapShopProject\\SnapShopAPI\\SnapShop.Service\\SnapShop.Service.csproj"
             }
           }
         }
@@ -4689,7 +4693,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -4721,6 +4726,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.24, 8.0.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.24, 8.0.24]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.24, 8.0.24]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.24, 8.0.24]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -4729,7 +4752,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
