@@ -20,6 +20,8 @@ namespace SnapShop.Core.Repositories
         Task<IEnumerable<T>> GetAllWithSpecsAsync(ISpecifications<T> Specs);
         Task<T> GetByIdWithSpecsAsync(int id, ISpecifications<T> Specs);
 
+        Task<int> GetProductCountWithSpecsAsync(ISpecifications<T> Specs);
+
         #endregion
 
     }

@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\SnapShop.APIs.props" />
-</Project>

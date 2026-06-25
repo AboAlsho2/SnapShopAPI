@@ -27,6 +27,10 @@ namespace SnapShop.Repository
 
                 query = query.OrderByDescending(specs.SortDescending);
             }
+            if (specs.IsPaginationEnabled)
+            {
+                query = query.Skip(specs.Skip).Take(specs.Take);
+            }
 
             query = specs.Includes.Aggregate(query, (currentQuery, includeExp) 
                 => currentQuery.Include(includeExp));

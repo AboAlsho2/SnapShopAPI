@@ -15,6 +15,10 @@ namespace SnapShop.Core.Specifications
 
         public Expression<Func<T, object>> SortAscending { get; set; }
         public Expression<Func<T, object>> SortDescending { get; set; }
+        public int Take { get; set; }
+        public int Skip { get; set; }
+        public bool IsPaginationEnabled { get; set; }
+
 
     }
 }

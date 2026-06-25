@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SnapShop.APIs.DTOs;
 using SnapShop.APIs.Errors;
+using SnapShop.APIs.Helpers;
 using SnapShop.Core.Models;
 using SnapShop.Core.Repositories;
 using SnapShop.Core.Specifications;
@@ -29,13 +30,24 @@ namespace SnapShop.APIs.Controllers
         [ProducesResponseType(typeof(ProductsToReturnDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
 
-        public async Task<ActionResult<IReadOnlyList<ProductsToReturnDTO>>> GetAllProducts([FromQuery]ProductSpecParam  Params )
+        public async Task<ActionResult<Pagination<ProductsToReturnDTO>>> GetAllProducts([FromQuery]ProductSpecParam  Params )
         {
             var specs = new ProductWithBrandAndTypeSpecs(Params);
             var products = await _productRepo.GetAllWithSpecsAsync(specs);
             if (products == null) return NotFound( new ApiResponse(StatusCodes.Status404NotFound));
+            var count = await _productRepo.GetProductCountWithSpecsAsync(new ProductWithFiltrationForCountAsync(Params));
             var mappedProduct = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductsToReturnDTO>>(products);
-            return Ok(mappedProduct);
+
+            var returenedProducts = new Pagination<ProductsToReturnDTO>
+            {
+                PageIndex = Params.PageIndex,
+                PageSize = Params.PageSize,
+                Data = mappedProduct,
+                Count = count
+
+            };
+            
+            return Ok(returenedProducts);
 
         }
 

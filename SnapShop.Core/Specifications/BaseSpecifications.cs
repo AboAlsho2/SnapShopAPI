@@ -15,6 +15,9 @@ namespace SnapShop.Core.Specifications
             new List<Expression<Func<T, object>>>();
         public Expression<Func<T, object>> SortAscending { get ; set ; }
         public Expression<Func<T, object>> SortDescending { get ; set ; }
+        public int Take { get; set; }
+        public int Skip { get; set; }
+        public bool IsPaginationEnabled { get; set; }
 
         public BaseSpecifications()
         {
@@ -33,6 +36,13 @@ namespace SnapShop.Core.Specifications
         public void OrderDescending(Expression<Func<T, object>> sortDes)
         {
             SortDescending = sortDes;
+        }
+
+        public void ApplyPagination(int take , int skip)
+        {
+            IsPaginationEnabled = true;
+            Take = take;
+            Skip = skip;
         }
 
     }

@@ -12,6 +12,8 @@ namespace SnapShop.Core.Specifications
     {
         public ProductWithBrandAndTypeSpecs(ProductSpecParam Params) : base(
            p =>
+           (string.IsNullOrEmpty(Params.Search) || p.Name.ToLower().Contains(Params.Search))
+           &&
            (!Params.TypeId.HasValue||p.ProductTypeId == Params.TypeId)
             &&
             (!Params.BrandId.HasValue || p.ProductBrandId == Params.BrandId)
@@ -37,6 +39,7 @@ namespace SnapShop.Core.Specifications
                 }
             }
 
+            ApplyPagination(Params.pageSize, (Params.PageIndex - 1) * Params.pageSize);
 
         }
         public ProductWithBrandAndTypeSpecs(int id) : base(p => p.Id == id)
