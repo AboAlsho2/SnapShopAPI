@@ -8,10 +8,13 @@ using System.Threading.Tasks;
 
 namespace SnapShop.Core.Specifications
 {
-    internal class BaseSpecifications<T> : ISpecifications<T> where T : BaseModel
+    public class BaseSpecifications<T> : ISpecifications<T> where T : BaseModel
     {
         public Expression<Func<T, bool>> Criteria { get ; set ; }
-        public List<Expression<Func<T, object>>> Includes { get; set; } = new List<Expression<Func<T, object>>>();
+        public List<Expression<Func<T, object>>> Includes { get; set; } = 
+            new List<Expression<Func<T, object>>>();
+        public Expression<Func<T, object>> SortAscending { get ; set ; }
+        public Expression<Func<T, object>> SortDescending { get ; set ; }
 
         public BaseSpecifications()
         {
@@ -21,5 +24,16 @@ namespace SnapShop.Core.Specifications
         {
             Criteria = criateriaExpression;
         }
+
+        public void OrderAscending(Expression<Func<T, object>> sortAsc)
+        {
+            SortAscending = sortAsc;
+        }
+
+        public void OrderDescending(Expression<Func<T, object>> sortDes)
+        {
+            SortDescending = sortDes;
+        }
+
     }
 }

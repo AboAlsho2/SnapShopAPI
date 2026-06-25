@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SnapShop.APIs")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+98e644761cd3270f79afd5f11dadb23e1f2de066")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+831c75f0ccd2214fdfb64d6eb82b4c15f47a9984")]
 [assembly: System.Reflection.AssemblyProductAttribute("SnapShop.APIs")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SnapShop.APIs")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

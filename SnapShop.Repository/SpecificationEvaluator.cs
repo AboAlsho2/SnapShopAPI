@@ -17,7 +17,19 @@ namespace SnapShop.Repository
             if (specs.Criteria is not null) { 
                 query= query.Where(specs.Criteria);
             }
-            query = specs.Includes.Aggregate(query, (currentQuery, includeExp) => currentQuery.Include(includeExp));
+
+            if (specs.SortAscending is not null) { 
+            
+                query = query.OrderBy(specs.SortAscending);
+            }
+            if (specs.SortDescending is not null)
+            {
+
+                query = query.OrderByDescending(specs.SortDescending);
+            }
+
+            query = specs.Includes.Aggregate(query, (currentQuery, includeExp) 
+                => currentQuery.Include(includeExp));
             return query;
         }
     }

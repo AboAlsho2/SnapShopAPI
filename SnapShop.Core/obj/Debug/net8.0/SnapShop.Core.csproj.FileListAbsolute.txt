@@ -9,3 +9,15 @@ C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Co
 C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\refint\SnapShop.Core.dll
 C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.pdb
 C:\Users\LAPTOP\source\repos\SnapShop\SnapShop.Core\obj\Debug\net8.0\ref\SnapShop.Core.dll
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.deps.json
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.dll
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\bin\Debug\net8.0\SnapShop.Core.pdb
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.AssemblyInfoInputs.cache
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.AssemblyInfo.cs
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.csproj.CoreCompileInputs.cache
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.sourcelink.json
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.dll
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\refint\SnapShop.Core.dll
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\SnapShop.Core.pdb
+D:\WorkArea\Shawky\Back\SnapShopProject\SnapShopAPI\SnapShop.Core\obj\Debug\net8.0\ref\SnapShop.Core.dll
