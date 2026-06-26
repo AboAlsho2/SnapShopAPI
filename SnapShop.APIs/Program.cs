@@ -8,6 +8,7 @@ using SnapShop.APIs.Middlewares;
 using SnapShop.Core.Repositories;
 using SnapShop.Repository;
 using SnapShop.Repository.Data;
+using StackExchange.Redis;
 
 namespace SnapShop.APIs
 {
@@ -29,7 +30,14 @@ namespace SnapShop.APIs
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            builder.Services.AddSingleton<IConnectionMultiplexer>(options =>
+            {
+                var connection = builder.Configuration.GetConnectionString("RedisConnection");
+                return ConnectionMultiplexer.Connect(connection);
+            });
+
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
 
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
