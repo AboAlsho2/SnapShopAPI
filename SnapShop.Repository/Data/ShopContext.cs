@@ -11,7 +11,7 @@ namespace SnapShop.Repository.Data
 {
     public class ShopContext : DbContext
     {
-        public ShopContext(DbContextOptions options) : base(options)
+        public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
         }
 

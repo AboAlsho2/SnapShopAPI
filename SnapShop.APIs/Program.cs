@@ -1,13 +1,16 @@
 
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SnapShop.APIs.Errors;
 using SnapShop.APIs.Helpers;
 using SnapShop.APIs.Middlewares;
+using SnapShop.Core.Models.Identity;
 using SnapShop.Core.Repositories;
 using SnapShop.Repository;
 using SnapShop.Repository.Data;
+using SnapShop.Repository.Identity;
 using StackExchange.Redis;
 
 namespace SnapShop.APIs
@@ -30,6 +33,11 @@ namespace SnapShop.APIs
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
+            builder.Services.AddDbContext<AppIdentityDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("IdentityConnection"));
+            });
+
             builder.Services.AddSingleton<IConnectionMultiplexer>(options =>
             {
                 var connection = builder.Configuration.GetConnectionString("RedisConnection");
@@ -38,6 +46,11 @@ namespace SnapShop.APIs
 
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+
+            builder.Services.AddAuthentication();
+            builder.Services.AddIdentity<AppUser, IdentityRole>()
+                            .AddEntityFrameworkStores<AppIdentityDbContext>();
+
 
             builder.Services.Configure<ApiBehaviorOptions>(options =>
             {
@@ -79,8 +92,11 @@ namespace SnapShop.APIs
 
                 var dbContext = services.GetRequiredService<ShopContext>();
                 await dbContext.Database.MigrateAsync();
-
+                var IdentityContext = services.GetRequiredService<AppIdentityDbContext>();
+                await IdentityContext.Database.MigrateAsync();
                 await ShopContextSeed.SeedAsync(dbContext);
+                var manger = services.GetRequiredService<UserManager<AppUser>>();
+                await  AppIdentityDbContextSeed.SeedUserAsync(manger);
             }
             catch (Exception ex)
             {
