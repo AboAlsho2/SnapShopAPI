@@ -1,9 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SnapShop.APIs.DTOs;
 using SnapShop.APIs.Errors;
 using SnapShop.Core.Models.Identity;
+using SnapShop.Core.Services;
+using System.Security.Claims;
 
 namespace SnapShop.APIs.Controllers
 {
@@ -12,11 +15,13 @@ namespace SnapShop.APIs.Controllers
     {
         private readonly UserManager<AppUser> _manager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly ITokenService _tokenService;
 
-        public AccountsController(UserManager<AppUser> manager, SignInManager<AppUser> signInManager)
+        public AccountsController(UserManager<AppUser> manager, SignInManager<AppUser> signInManager, ITokenService tokenService)
         {
             _manager = manager;
             _signInManager = signInManager;
+            _tokenService = tokenService;
         }
 
         //Regester
@@ -24,6 +29,11 @@ namespace SnapShop.APIs.Controllers
         [HttpPost("Register")]
         public async Task<ActionResult<UserDTO>> Regester(RegisterAttributeDTO model)
         {
+            if (CheckEmailExist(model.Email).Result.Value)
+            {
+                return BadRequest(new ApiResponse(400, "This Email Is Already Exist"));
+            }
+
             var user = new AppUser
             {
                 DisplayName = model.DisplayName,
@@ -42,7 +52,7 @@ namespace SnapShop.APIs.Controllers
                 {
                     DisplayName = model.DisplayName,
                     Email = model.Email,
-                    Token = "this is token"
+                    Token = await _tokenService.CreateTokenAsync(user, _manager)
                 };
                 return Ok(returnedUser);
             }
@@ -61,9 +71,32 @@ namespace SnapShop.APIs.Controllers
             {
                 DisplayName = user.DisplayName,
                 Email = user.Email,
-                Token = "this is token"
+                Token = await _tokenService.CreateTokenAsync(user, _manager)
             };
             return Ok(returenedUser);
 
+        }
+
+
+        [Authorize]
+        [HttpGet("GetCurrentUser")]
+        public async Task<ActionResult<UserDTO>> GetCuttentUser() 
+        {
+           var email = User.FindFirstValue(ClaimTypes.Email);
+            var user = await _manager.FindByEmailAsync(email);
+
+            return Ok(new UserDTO
+            {
+                DisplayName = user.DisplayName,
+                Email = email,
+                Token = await _tokenService.CreateTokenAsync(user , _manager)
+            });
+        
+        }
+
+        [HttpGet("checkEmailExist")]
+        public async Task<ActionResult<bool>> CheckEmailExist(string email) 
+        {
+        return await _manager.FindByEmailAsync(email) is not null;
         }
 }}

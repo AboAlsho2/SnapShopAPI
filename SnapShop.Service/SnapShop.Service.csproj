@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.28" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SnapShop.Core\SnapShop.Core.csproj" />
     <ProjectReference Include="..\SnapShop.Repository\SnapShop.Repository.csproj" />
   </ItemGroup>

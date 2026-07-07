@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SnapShop.APIs.DTOs;
 using SnapShop.APIs.Errors;
 using SnapShop.Core.Models;
 using SnapShop.Core.Repositories;
@@ -10,10 +12,12 @@ namespace SnapShop.APIs.Controllers
     public class BasketController : BaseController
     {
         private readonly IBasketRepository _basketRepository;
+        private readonly IMapper _mapper;
 
-        public BasketController(IBasketRepository basketRepository)
+        public BasketController(IBasketRepository basketRepository , IMapper mapper)
         {
             _basketRepository = basketRepository;
+            _mapper = mapper;
         }
 
         //get or Recreate Basket
@@ -27,9 +31,10 @@ namespace SnapShop.APIs.Controllers
 
         //Update or Create Basket 
         [HttpPost]
-        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasket basket)
+        public async Task<ActionResult<CustomerBasket>> UpdateBasket(CustomerBasketDTO basket)
         {
-            var updatedOrCreatedBasket = await _basketRepository.UpdateBasketAsync(basket);
+            var mappedBasket = _mapper.Map<CustomerBasketDTO, CustomerBasket>(basket);
+            var updatedOrCreatedBasket = await _basketRepository.UpdateBasketAsync(mappedBasket);
             if (updatedOrCreatedBasket is null)
             {
                 return BadRequest( new ApiResponse(400));

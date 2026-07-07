@@ -1,17 +1,23 @@
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using SnapShop.APIs.Errors;
 using SnapShop.APIs.Helpers;
 using SnapShop.APIs.Middlewares;
 using SnapShop.Core.Models.Identity;
 using SnapShop.Core.Repositories;
+using SnapShop.Core.Services;
 using SnapShop.Repository;
 using SnapShop.Repository.Data;
 using SnapShop.Repository.Identity;
+using SnapShop.Service;
 using StackExchange.Redis;
+using System.Text;
 
 namespace SnapShop.APIs
 {
@@ -26,7 +32,32 @@ namespace SnapShop.APIs
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwaggerGen(options => 
+            {
+                options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header
+
+                });
+
+                options.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    { 
+                        new OpenApiSecurityScheme
+                        {
+                        Reference = new OpenApiReference
+                        {
+                            Id = "Bearer",
+                            Type = ReferenceType.SecurityScheme
+                        }
+                        }, Array.Empty<string>()
+                        }
+                });
+            });
 
             builder.Services.AddDbContext<ShopContext>(options =>
             {
@@ -46,10 +77,50 @@ namespace SnapShop.APIs
 
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             builder.Services.AddScoped(typeof(IBasketRepository), typeof(BasketRepository));
+            builder.Services.AddScoped(typeof(ITokenService), typeof(TokenService));
+            //builder.Services.AddScoped<ITokenService, TokenService>();
 
-            builder.Services.AddAuthentication();
-            builder.Services.AddIdentity<AppUser, IdentityRole>()
-                            .AddEntityFrameworkStores<AppIdentityDbContext>();
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddJwtBearer(options => 
+                            {
+                                options.TokenValidationParameters = new TokenValidationParameters()
+                                {
+                                    ValidateIssuer = true,
+                                    ValidIssuer = builder.Configuration["JWT:Issuer"],
+                                    ValidateAudience = true,
+                                    ValidAudience = builder.Configuration["JWT:Audience"],
+                                    ValidateLifetime = true,
+                                    ValidateIssuerSigningKey = true,
+                                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
+
+                                };
+
+                                options.Events = new JwtBearerEvents
+                                {
+                                    OnAuthenticationFailed = context =>
+                                    {
+                                        Console.WriteLine(context.Exception);
+                                        return Task.CompletedTask;
+                                    },
+                                    OnChallenge = context => 
+                                    {
+                                        Console.WriteLine("Challenge");
+                                        return Task.CompletedTask;
+                                    }
+                                };
+                            });
+
+
+
+           // builder.Services.AddIdentity<AppUser, IdentityRole>()
+             //               .AddEntityFrameworkStores<AppIdentityDbContext>();
+
+            builder.Services.AddIdentityCore<AppUser>()
+                            .AddRoles<IdentityRole>()
+                            .AddEntityFrameworkStores<AppIdentityDbContext>()
+                            .AddSignInManager()
+                            .AddDefaultTokenProviders();
 
 
             builder.Services.Configure<ApiBehaviorOptions>(options =>
@@ -107,10 +178,23 @@ namespace SnapShop.APIs
             }
 
             app.UseStaticFiles();
-            app.UseStatusCodePagesWithReExecute("/error/{0}");
+            //  app.UseStatusCodePagesWithReExecute("/error/{0}");
 
+            app.Use(async (context, next) =>
+            {
+                Console.WriteLine($"Path:{context.Request.Path}");
+
+                foreach (var header in context.Response.Headers)
+                {
+                    Console.WriteLine($"{header.Key} : {header.Value}");
+                }
+                await next();
+
+                Console.WriteLine($"status Code : {context.Response.StatusCode}");
+            });
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 
