@@ -19,6 +19,10 @@ namespace SnapShop.Repository.Data
         public DbSet<ProductBrand> Brands { get; set; }
         public DbSet<ProductType> Types { get; set; }
 
+        public DbSet<ProductType> Order { get; set; }
+        public DbSet<ProductType> OrderItem { get; set; }
+        public DbSet<ProductType> DeliveryMethod { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());

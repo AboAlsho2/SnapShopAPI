@@ -61,6 +61,11 @@ namespace SnapShop.Repository
             return await SpecificationEvaluator<T>.GetQuery(_shopContext.Set<T>(), Specs).CountAsync();
         }
 
+        public async Task AddAsync(T item)
+        {
+             await _shopContext.Set<T>().AddAsync(item);
+        }
+
 
         #endregion
 

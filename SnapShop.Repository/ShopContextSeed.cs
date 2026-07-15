@@ -1,4 +1,5 @@
 ﻿using SnapShop.Core.Models;
+using SnapShop.Core.Models.Order;
 using SnapShop.Repository.Data;
 using System;
 using System.Collections.Generic;
@@ -64,6 +65,22 @@ namespace SnapShop.Repository
 
                 }
 
+            }
+
+            if (!shopContext.DeliveryMethod.Any())
+            {
+
+                var DeliveryData = File.ReadAllText("../SnapShop.Repository/Data/DataSeed/delivery.json");
+                var DelivaryEthods = JsonSerializer.Deserialize<List<DeliveryMethod>>(DeliveryData);
+                if (DelivaryEthods?.Count > 0)
+                {
+                    foreach (var method in DelivaryEthods)
+                    {
+                        await shopContext.Set<DeliveryMethod>().AddAsync(method);
+                    }
+                    await shopContext.SaveChangesAsync();
+
+                }
             }
 
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SnapShop.Repository.Data.Configurations
 {
-    internal class BrandConfigurations : IEntityTypeConfiguration<ProductBrand>
+    public class BrandConfigurations : IEntityTypeConfiguration<ProductBrand>
     {
         public void Configure(EntityTypeBuilder<ProductBrand> builder)
         {

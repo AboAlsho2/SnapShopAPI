@@ -22,6 +22,8 @@ namespace SnapShop.Core.Repositories
 
         Task<int> GetProductCountWithSpecsAsync(ISpecifications<T> Specs);
 
+        Task AddAsync (T item);
+
         #endregion
 
     }

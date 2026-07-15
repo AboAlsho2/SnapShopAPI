@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SnapShop.Repository.Data;
 
@@ -11,9 +12,11 @@ using SnapShop.Repository.Data;
 namespace SnapShop.Repository.Data.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    partial class ShopContextModelSnapshot : ModelSnapshot
+    [Migration("20260710135731_OrderEntities")]
+    partial class OrderEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +183,7 @@ namespace SnapShop.Repository.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductType");
+                    b.ToTable("Types");
                 });
 
             modelBuilder.Entity("SnapShop.Core.Models.Order.Order", b =>
