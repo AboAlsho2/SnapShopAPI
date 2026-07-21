@@ -30,7 +30,7 @@ namespace SnapShop.Core.Models.Order
         public decimal SubTotal { get; set; }
         public decimal Total => SubTotal + DeliveryMethod.Cost;
         public string PaymentIntentId { get; set; } = string.Empty;
-        
+
 
     }
 }
